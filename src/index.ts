@@ -5,6 +5,8 @@ const s = serve({ port });
 
 console.log(`http://localhost:${port}/`);
 
+console.log("EXAMPLE env variable:", Deno.env.get("EXAMPLE"));
+
 for await (const req of s) {
 	req.respond({ body: "Choo Choo! Welcome to your Deno app\n" });
 }
